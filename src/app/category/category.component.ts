@@ -22,6 +22,7 @@ export class CategoryComponent implements OnInit {
   }
 
   onSelect(category: ICategory) {
+    console.log(category);
     this.selectedCategory = category;
   }
 

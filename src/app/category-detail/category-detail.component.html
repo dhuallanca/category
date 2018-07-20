@@ -1,12 +1,23 @@
 <p>
-  category-detail works!
+  {{categoryDetail.category.name}}
 </p>
 <section>
   <h2>Detail Selected</h2>
   <p>{{categoryDetail.name}}</p>
-  <ul>
-    <li *ngFor="let photo of categoryDetail.photoUrls">
-      Photo: {{photo}}
-    </li>
-  </ul>
+  <section>
+      <ul>
+          <li *ngFor="let photo of categoryDetail.photoUrls">
+            Photo: {{photo}}
+          </li>
+        </ul>
+  </section>
+
+  <section>
+      <ul>
+          <li *ngFor="let tag of categoryDetail.tags">
+            Tag: {{tag}}
+          </li>
+        </ul>
+    </section>
+  
 </section>
