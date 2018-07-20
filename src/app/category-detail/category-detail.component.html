@@ -1,23 +1,21 @@
-<p>
-  {{categoryDetail.category.name}}
-</p>
+<h1>
+    {{categoryDetail.category.name}}
+</h1>
 <section>
-  <h2>Detail Selected</h2>
-  <p>{{categoryDetail.name}}</p>
-  <section>
-      <ul>
-          <li *ngFor="let photo of categoryDetail.photoUrls">
-            Photo: {{photo}}
-          </li>
-        </ul>
-  </section>
-
-  <section>
-      <ul>
-          <li *ngFor="let tag of categoryDetail.tags">
-            Tag: {{tag}}
-          </li>
-        </ul>
+    <p id="detailName">{{categoryDetail.name}}</p>
+    <section id="photo">
+        <div *ngFor="let photo of categoryDetail.photoUrls; index as i">
+            <img [src]="photo" />
+            <p>{{categoryDetail?.tags[i]}}</p>
+        </div>
     </section>
-  
+
+    <!-- <section>
+        <ul>
+            <li *ngFor="let tag of categoryDetail.tags">
+                Tag: {{tag}}
+            </li>
+        </ul>
+    </section> -->
+
 </section>

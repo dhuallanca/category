@@ -1,0 +1,12 @@
+#photo {
+    float: left;
+}
+
+#detailName {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+h1 {
+    color: blue;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 import { CategoryDetailService } from './category-detail.service';
 
@@ -10,15 +10,18 @@ import { ICategory } from '../category/model/ICategory';
   templateUrl: './category-detail.component.html',
   styleUrls: ['./category-detail.component.css']
 })
-export class CategoryDetailComponent implements OnInit {
+export class CategoryDetailComponent implements OnChanges {
   @Input() selectedCategory: ICategory;
 
   categoryDetail: ICategoryDetail;
 
   constructor(private categoryDetailService: CategoryDetailService) { }
 
-  ngOnInit() {
-    console.log(this.selectedCategory);
+  ngOnChanges() {
+    this.getDetail();
+  }
+
+  private getDetail() {
     this.categoryDetailService.getCategoryDetailById(this.selectedCategory.id).subscribe(response =>
       this.categoryDetail = response);
   }

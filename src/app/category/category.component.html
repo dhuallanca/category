@@ -1,10 +1,7 @@
-<p>
-    category works!
-</p>
 <ul>
     <li *ngFor="let category of categories" (click)="onSelect(category)">
         <span>{{category.name}}</span>
     </li>
 </ul>
 
-<app-category-detail *ngIf="this.selectedCategory" [selectedCategory] = "selectedCategory" ></app-category-detail>
+<app-category-detail *ngIf="this.selectedCategory" [selectedCategory]="selectedCategory"></app-category-detail>
