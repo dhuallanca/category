@@ -2,8 +2,8 @@ import {ICategory} from '../../category/model/ICategory'
 
 export interface ICategoryDetail {
     id: number;
-    nombre: string;
+    name: string;
     category: ICategory;
-    fotoUrls: string[];
+    photoUrls: string[];
     tags: string[];
 }
