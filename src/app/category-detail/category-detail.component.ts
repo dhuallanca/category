@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import { CategoryDetailService } from './category-detail.service';
+
+import { ICategoryDetail } from './model/ICategoryDetail';
+import { ICategory } from '../category/model/ICategory';
 
 @Component({
   selector: 'app-category-detail',
@@ -6,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-detail.component.css']
 })
 export class CategoryDetailComponent implements OnInit {
+  @Input() selectedCategory: ICategory;
 
-  constructor() { }
+  categoryDetail: ICategoryDetail;
+
+  constructor(private categoryDetailService: CategoryDetailService) { }
 
   ngOnInit() {
+    console.log(this.selectedCategory);
+    this.categoryDetailService.getCategoryDetailById(this.selectedCategory.id).subscribe(response =>
+      this.categoryDetail = response);
   }
+
+
 
 }
